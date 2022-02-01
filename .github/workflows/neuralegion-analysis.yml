@@ -1,0 +1,26 @@
+name: "NeuraLegion"
+
+on:
+  push:
+    branches: [ $default-branch, $protected-branches ]
+  pull_request:
+    branches: [ $default-branch ]
+  schedule:
+    - cron: $cron-weekly
+
+jobs:
+  neuralegion_scan:
+    runs-on: ubuntu-18.04
+    name: A job to run a Nexploit scan
+    steps:
+      - uses: actions/checkout@v2
+      - name: Start Nexploit Scan 🏁
+          id: start
+          uses: NeuraLegion/run-scan@v1.1
+          with:
+            api_token: ${{ secrets.NEURALEGION_TOKEN }}
+            name: GitHub scan ${{ github.sha }}
+            discovery_types: |
+              [ "crawler" ]
+            crawler_urls: |
+              [ "https://brokencrystals.com" ] # ✏️ Update this to the url you wish to scan

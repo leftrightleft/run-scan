@@ -1,0 +1,7 @@
+name: "storefront-service config"
+
+queries:
+  - uses: security-and-quality
+
+paths:
+  - services/storefront

@@ -18,7 +18,7 @@ NeuraLegion works with your existing CI/CD pipelines – trigger scans on every 
 
 One file. One command. One scan. No UI needed.
 
-### Super-Fast Scans
+### Super-Fast Scansasdf
 
 Interacts with applications and APIs, instead of just crawling them and guessing.
 Scans are fast as our AI-powered engine can understand application architecture and generate sophisticated and targeted attacks.
